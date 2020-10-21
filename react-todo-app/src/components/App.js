@@ -57,9 +57,30 @@ class App extends Component {
     });
   };
 
+  completeHandler = (id) => {
+    const todo_list = [...this.state.todo_list];
+    const index = todo_list.findIndex((todo_item) => todo_item.id === id);
+
+    const change_item = {
+      ...todo_list[index],
+      complete: !todo_list[index].complete,
+    };
+
+    todo_list[index] = { ...change_item };
+
+    this.setState({
+      todo_list: [...todo_list],
+    });
+  };
+
   render() {
     const { input, todo_list } = this.state;
-    const { changeHandler, insertHandler, deleteHandler } = this;
+    const {
+      changeHandler,
+      insertHandler,
+      deleteHandler,
+      completeHandler,
+    } = this;
 
     return (
       <div>
@@ -70,7 +91,11 @@ class App extends Component {
             value={input}
             insertHandler={insertHandler}
           />
-          <TodoItemList todo_list={todo_list} deleteHandler={deleteHandler} />
+          <TodoItemList
+            todo_list={todo_list}
+            completeHandler={completeHandler}
+            deleteHandler={deleteHandler}
+          />
         </PageLayout>
       </div>
     );
