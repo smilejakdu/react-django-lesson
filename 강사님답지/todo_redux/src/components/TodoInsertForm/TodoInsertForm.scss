@@ -1,0 +1,38 @@
+.board_box {
+  position: relative;
+  border: 1px solid green;
+  padding: 40px;
+  border-radius: 20px;
+  display: inline-block;
+}
+
+.board_word {
+  font-size: 20px;
+  border: none;
+  resize: none;
+  outline: none;
+}
+
+.board_meaning {
+  resize: none;
+  border: none;
+  outline: none;
+  font-size: 20px;
+}
+
+.board_btn {
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 20px;
+  color: black;
+  border: 1px solid orange;
+  border-radius: 20px;
+  float: left;
+  background: white;
+  margin: 20px 10px;
+
+  &:hover {
+    background: orangered;
+    cursor: pointer;
+  }
+}
