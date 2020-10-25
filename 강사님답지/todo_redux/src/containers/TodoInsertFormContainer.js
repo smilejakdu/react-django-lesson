@@ -33,16 +33,21 @@ class TodoInsertFormContainer extends Component {
     // 액션 전달, 값
     const { value, meaning, FormActions, ItemActions } = this.props;
     // 새로 추가하기
-    const new_item = {
-      content: value,
-      meaning: meaning,
-      complete: false,
-      id: this.getItemId(),
-    };
-    ItemActions.add(new_item);
-    // form 비워주기 <--- 방명록 입력창, 댓글 입력창
-    FormActions.formChange("");
-    FormActions.meaningChange("");
+
+    if (value.length === 0 || meaning.length === 0) {
+      alert("값추가하셈");
+    } else {
+      const new_item = {
+        content: value,
+        meaning: meaning,
+        complete: false,
+        id: this.getItemId(),
+      };
+      ItemActions.add(new_item);
+      // form 비워주기 <--- 방명록 입력창, 댓글 입력창
+      FormActions.formChange("");
+      FormActions.meaningChange("");
+    }
   };
 
   render() {

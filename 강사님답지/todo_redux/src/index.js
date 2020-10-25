@@ -1,6 +1,6 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './components/App';
+import React from "react";
+import ReactDOM from "react-dom";
+import App from "./components/App";
 
 // 아무것도 없는 빈 프로젝트
 // 1번 과제 : 빈 프로젝트 만들기까지 연습 3번 이상
@@ -75,19 +75,23 @@ import App from './components/App';
     나는 리스트를 갱신해야지
 
     5. 어떤 컨테이너 - 액션을 실행(호출)
+
+    yarn add redux react-redux redux-actions
+    yarn add immutable redux-logger
+
 */
 // 여러 곳에 퍼져있는 상태값들을 한곳에서 모아서 관리하겠다.
-import {createStore} from 'redux';
-import modules from './modules';
+import { createStore } from "redux";
+import modules from "./modules";
 // 만들어둔 리듀서를 보고 관리해야되는 상태값들을 파악해서 정리한다.
-import {Provider} from 'react-redux';
-const store  = createStore(modules);
+import { Provider } from "react-redux";
+const store = createStore(modules);
 
 ReactDOM.render(
-    <React.StrictMode>
-        <Provider store={store}>
-            <App />
-        </Provider>
-    </React.StrictMode>,
-    document.getElementById('root')
+  <React.StrictMode>
+    <Provider store={store}>
+      <App />
+    </Provider>
+  </React.StrictMode>,
+  document.getElementById("root")
 );
