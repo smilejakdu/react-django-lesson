@@ -3,7 +3,7 @@ import { Map, List } from "immutable";
 import { handleActions, createAction } from "redux-actions";
 
 // 액션 타입 만들기
-// 모듈명/액션명
+// 모듈명 / 액션명
 const FORM_CHANGE = "form/FORM_CHANGE";
 const MEANING_CHANGE = "form/MEANING_CHANGE";
 // signup/FORM_CHANGE - namespace
